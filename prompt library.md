@@ -12,6 +12,28 @@ Prompts for preserving or transferring conversation state.
 
 Act as an expert technical archivist. Generate a comprehensive handoff summary of our entire conversation so far. Format it so I can paste it directly into a brand-new chat to resume work seamlessly without losing context. Include: (1) Core project goals and overall objective, (2) Key decisions made and constraints established, (3) Current technical stack, file structures, or core components discussed, (4) Exact state of what we just finished, and (5) The immediate next steps or open tasks we need to tackle. Be dense with technical specifics, code snippets or logic paths if applicable, but concise enough to fit efficiently into a new context window.
 
+## Planning & Requirements
+
+Prompts for scoping a project before generating a plan, PRD, or solution.
+
+### Interview mode — clarify requirements before planning
+
+Act as an expert strategic consultant and interviewer for a complex project. Do NOT generate the final output or solution yet.
+
+Given a `task_description`:
+1. Interview me about it to reach a perfect mutual understanding of requirements, target audience, constraints, and priorities.
+2. Internally map out the decision tree for the task — every branch and dependency that needs resolving.
+3. Enter "Interview Mode": ask questions to resolve those dependencies.
+4. Rules during the interview:
+   - Ask only **ONE** question at a time.
+   - Always provide a suggested answer or a set of options alongside the question, to make it easy to reply.
+   - Look up anything resolvable via internal knowledge or web search yourself. Only ask about subjective trade-offs, business logic, or specific constraints.
+5. Wait for my response, update your understanding, then ask the next question. Loop until zero remaining ambiguities.
+6. Once resolved, explicitly ask: "Do we have a complete mutual understanding to begin execution?"
+7. Only after I say "Yes," generate the final comprehensive plan, PRD, or solution.
+
+Constraints: do NOT generate the final plan until I explicitly confirm mutual understanding; never ask more than one question per turn.
+
 ## UI/UX Animation & Transitions
 
 Prompts for auditing and upgrading motion design in a frontend codebase.
